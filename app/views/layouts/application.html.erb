@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SantasList</title>
+    <title>Santa's List</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,10 +9,11 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+
+    <%= favicon_link_tag asset_path("santa.svg") %>
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
 
     <%= yield %>

@@ -1,2 +1,14 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container mt-3">
+  <h1>Bienvenue chez Santa's List!</h1>
+
+  <% if user_signed_in? %>
+    <p><strong>Salut, <%= current_user.name %> !</strong></p>
+    <p>Alors, es-tu prêt à me dire ce que tu aimerais recevoir pour Noël ? C'est par ici 👇</p>
+    <%= link_to 'Créer un voeu', new_wish_path, class: 'btn btn-primary' %>
+  <% else %>
+    <p><strong>Aucune formalité ici, tire-toi une bûche et fais-toi un bon café avant de débuter. Fais comme chez toi !</strong></p>
+    <p>Ici, tu pourras consulter la liste des récipiendaires de cadeaux de Noël pour l'année <%= Time.now.year %>. </p>
+
+    <p>Es-tu récipiendaire ? Connecte-toi en cliquant sur le bonhomme au bas de l'écran !</p>
+  <% end %>
+</div>
