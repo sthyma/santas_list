@@ -3,5 +3,10 @@
   <div class="wish-info">
     <p><strong><%= wish.name %></strong></p>
     <p id="category">Catégorie : <%= wish.category.name %></p>
+    <% if @user == current_user %>
+      <%= link_to edit_wish_path(wish) do %>
+        <button class="btn btn-santa" id="plus-wish"><i class="fas fa-pencil-alt"></i></button>
+      <% end %>
+    <% end %>
   </div>
 </div>

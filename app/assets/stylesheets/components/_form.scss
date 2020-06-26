@@ -3,15 +3,10 @@
   background-color: $santa-baby-blue;
   position: sticky;
   top: 0px;
+  z-index: 1000;
+  margin-bottom: 32px;
   img {
     height: 100px
-  }
-}
-
-.login-form {
-  position: relative;
-  p {
-    margin-top: 64px;
   }
 }
 
@@ -21,8 +16,4 @@
 
 .form-actions {
   width: 300px;
-  & input {
-    position: absolute;
-    left: 200px;
-  }
 }

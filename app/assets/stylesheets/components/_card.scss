@@ -6,7 +6,7 @@
   padding: 8px 32px;
   margin: 32px 16px;
   height: 155px;
-  width: 175px;
+  width: 150px;
 
   border-radius: 16px;
 
@@ -31,7 +31,7 @@
   img {
     position: absolute;
     top: -15px;
-    left: 12px;
+    left: 2px;
   }
 }
 
@@ -42,8 +42,8 @@
 
   padding: 8px 32px;
   margin: 32px 16px;
-  height: 210px;
-  width: 200px;
+  height: 230px;
+  width: 170px;
 
   border-radius: 16px;
 
@@ -51,7 +51,7 @@
 
   img {
     height: 100px;
-    margin-left: 20px;
+    margin-top: 16px;
   }
 
   #category {
@@ -77,5 +77,11 @@
   p {
     margin: 0;
     text-align: left;
+  }
+
+  #plus-wish {
+    position: absolute;
+    top: -150px;
+    right: -14px;
   }
 }
