@@ -1,5 +1,5 @@
 .santa-navbar {
-  background: #e86478;
+  background: $santa-red;
 
   position: fixed;
   z-index: 1;
@@ -28,7 +28,7 @@
   padding: 16px 0 8px 0;
 
   h1 {
-    color: #e86478;
+    color: $santa-red;
   }
   img {
   height: 50px;

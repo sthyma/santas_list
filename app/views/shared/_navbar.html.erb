@@ -6,7 +6,7 @@
     <%= link_to user_path(current_user) do %>
       <%= image_tag current_user.avatar %>
     <% end %>
-    <%= link_to destroy_user_session_path, method: :destroy do %>
+    <%= link_to destroy_user_session_path, method: :delete do %>
       <%= image_tag asset_path('signout.svg') %>
     <% end %>
   <% else %>

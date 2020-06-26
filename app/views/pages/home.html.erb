@@ -1,12 +1,13 @@
 <div class="container mb-5">
   <%# Intro text %>
-  <div class="intro-text d-flex justify-content-center align-items-center flex-column" id="intro">
+  <div class="intro-text d-flex justify-content-center align-items-center flex-column add-margin-top" id="intro">
   <% if user_signed_in? %>
     <h2><strong>Salut, <%= current_user.name.capitalize %> !</strong></h2>
     <p style="text-align: center">Alors, es-tu prêt à me dire ce que tu aimerais recevoir pour Noël ?<br> C'est par ici 👇</p>
-    <%= link_to 'Créer un voeu', new_wish_path, class: 'btn btn-primary' %>
+    <%= link_to 'Créer un voeu', new_wish_path, class: 'btn btn-santa' %>
   <% else %>
-    <p><strong>Aucune formalité ici, tire-toi une bûche et fais-toi un bon café avant de débuter. Fais comme chez toi !</strong></p>
+    <h2>Bonjour, bonjour !</h2>
+    <p><strong>Bien content de te voir par ici ! Ici, aucune formalité ! Alors tire-toi une bûche et fais-toi un bon café avant de débuter. Fais comme chez toi !</strong></p>
     <p>Ici, tu pourras consulter la liste des récipiendaires de cadeaux de Noël pour l'année <%= Time.now.year %>. </p>
 
     <p>Es-tu récipiendaire ? Connecte-toi en cliquant sur le bonhomme au bas de l'écran !</p>
@@ -51,7 +52,7 @@
             </p>
 
             <!-- More info -->
-            <%= link_to 'En savoir plus', user_path(user), class: 'btn btn-primary'%>
+            <%= link_to 'En savoir plus', user_path(user), class: 'btn btn-santa'%>
           </div>
 
         </div>
