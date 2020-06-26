@@ -49,7 +49,7 @@
   </div>
     <% if @user == current_user %>
       <%= link_to new_wish_path do %>
-        <button class="btn btn-santa">Ajouter un souhait</button>
+        <button class="btn btn-santa" id="plus-wish"><i class="fas fa-plus"></i></button>
       <% end %>
     <% end %>
 </div>
@@ -69,13 +69,7 @@
   </div>
   <div class="row d-flex justify-content-center align-items-center">
     <% @user_wishes.each do |wish| %>
-      <% if @user == current_user %>
-        <%= link_to edit_wish_path(wish) do %>
-          <%= render partial: "shared/wish_card", locals: { wish: wish } %>
-        <% end %>
-      <% else %>
-        <%= render partial: "shared/wish_card", locals: { wish: wish } %>
-      <% end %>
+      <%= render partial: "shared/wish_card", locals: { wish: wish } %>
     <% end %>
   </div>
 </div>
