@@ -11,4 +11,17 @@
 
     <p>Es-tu récipiendaire ? Connecte-toi en cliquant sur le bonhomme au bas de l'écran !</p>
   <% end %>
+
+  <%# User cards %>
+  <div class="container">
+    <div class="row">
+      <% @users.each do |user| %>
+        <div class="col-sm-12 col-md-4 santa-card shadow my-3">
+          <%= image_tag user.avatar, class: "card-avatar" %>
+          <h2><%= user.name.capitalize %></h2>
+
+        </div>
+      <%end %>
+    </div>
+  </div>
 </div>
