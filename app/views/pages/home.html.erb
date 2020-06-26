@@ -5,7 +5,7 @@
   <div class="intro-text d-flex justify-content-center align-items-center flex-column add-margin-top" id="intro">
   <% if user_signed_in? %>
     <h2><strong>Salut, <%= current_user.name.capitalize %> !</strong></h2>
-    <p style="text-align: center">Alors, es-tu prêt à me dire ce que tu aimerais recevoir pour Noël ?<br> C'est par ici 👇</p>
+    <p style="text-align: center">Alors, prêt à me dire ce que tu aimerais recevoir pour Noël ?<br> C'est par ici 👇</p>
     <%= link_to 'Créer un voeu', new_wish_path, class: 'btn btn-santa' %>
   <% else %>
     <h2>Bonjour, bonjour !</h2>

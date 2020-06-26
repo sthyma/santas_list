@@ -53,7 +53,7 @@
   <div class="d-flex justify-content-center">
     <h4>Les voeux de <%= @user.name.capitalize %> </h4>
   </div>
-  <div class="row d-flex justify-content-around align-items-center">
+  <div class="row d-flex justify-content-center align-items-center">
     <% @user_wishes.each do |wish| %>
       <div class="wish-card">
         <%= image_tag "https://image.flaticon.com/icons/svg/2987/2987881.svg" %>
