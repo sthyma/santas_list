@@ -43,15 +43,6 @@
     top: 20px;
     right: 20px;
   }
-
-  #go-back {
-    position: absolute;
-    top: 10px;
-    left: 15px;
-    border-radius: 50%;
-    height: 45px;
-    width: 45px;
-  }
 }
 
 .not-colored-star {
@@ -64,4 +55,13 @@
 
 .wishlist {
   margin: 125px 0 50px 0;
+}
+
+#go-back {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
 }

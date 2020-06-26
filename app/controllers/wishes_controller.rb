@@ -3,16 +3,19 @@ class WishesController < ApplicationController
 
   def new
     @wish = Wish.new
+    @categories = Category.all
   end
 
   def create
+    # Category expected got "56", which is an instance of string
     @wish = Wish.new(wishes_params)
     @wish.user = current_user
 
     if @wish.save
-      redirect_to root_path #Change this to profile when User controller generated
+      redirect_to user_path(current_user)
       flash.notice = "🤖 Ton voeu a été créé! Espèrons que Père Noël l'exaucera!"
     else
+      redirect_to user_path(current_user)
       flash.alert = "🤖 Oh-oh... Il y a un petit problème interne... Peux-tu réessayer?"
       render :new
     end

@@ -1,6 +1,8 @@
 .form-banner {
   height: 155px;
   background-color: $santa-baby-blue;
+  position: sticky;
+  top: 0px;
   img {
     height: 100px
   }
