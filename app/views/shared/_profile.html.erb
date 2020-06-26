@@ -1,5 +1,9 @@
-<div class="profile-banner d-flex justify-content-center" style="background-image:url(<%=asset_path('trees.jpg')%>">
+<!--style="background-image:url(<%=asset_path('trees.jpg')%>"-->
+<%# Profile top %>
+<div class="profile-banner d-flex justify-content-center">
   <%= image_tag @user.avatar, class: 'profile-avatar' %>
+
+  <%# User info card %>
   <div class="user-info-card d-flex justify-content-around">
 
     <div class="card-left-side">
@@ -12,7 +16,10 @@
           <% age -= 1 if Date.today < @user.birthday + age.years %>
           <p><%= age %> ans</p>
       <% end %>
+      <p class="section-label"><strong>Adresse:</strong></p>
+      <p class="section-label">123 rue des Enfants</p>
     </div>
+
     <div class="card-right-side">
       <p class="section-label"><strong>Méthode de livraison</strong></p>
       <p class="section-value">Chimney</p>
@@ -37,5 +44,28 @@
       <p></p>
     </div>
   </div>
+    <%= link_to new_wish_path do %>
+      <button class="btn btn-santa">Ajouter un souhait</button>
+    <% end %>
 </div>
 
+<div class="container wishlist">
+  <div class="d-flex justify-content-center">
+    <h4>Les voeux de <%= @user.name.capitalize %> </h4>
+  </div>
+  <div class="row d-flex justify-content-around align-items-center">
+    <% @user_wishes.each do |wish| %>
+      <div class="wish-card">
+        <%= image_tag "https://image.flaticon.com/icons/svg/2987/2987881.svg" %>
+        <div class="wish-info">
+          <% if wish.name.length > 20 %>
+            <p><strong><%= wish.name.first(20) %>...</strong></p>
+          <% else %>
+            <p><strong><%= wish.name %></strong></p>
+          <% end %>
+          <p id="category">Catégorie : <%= wish.category.name %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

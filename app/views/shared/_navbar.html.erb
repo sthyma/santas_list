@@ -1,5 +1,7 @@
 <div class="santa-navbar d-flex justify-content-around align-items-center">
   <% if user_signed_in? %>
+
+  <%# Signed-in user navbar %>
     <%= link_to root_path do %>
       <%= image_tag asset_path('home.svg') %>
     <% end %>
@@ -9,12 +11,16 @@
     <%= link_to destroy_user_session_path, method: :delete do %>
       <%= image_tag asset_path('signout.svg') %>
     <% end %>
+
   <% else %>
+
+  <%# Signed out user navbar %>
     <%= link_to root_path do %>
       <%= image_tag asset_path('home.svg') %>
     <% end %>
     <%= link_to new_user_session_path do %>
-      <p>Sign in</p>
+      <%= image_tag asset_path('signin.svg') %>
     <% end %>
   <% end %>
+
 </div>

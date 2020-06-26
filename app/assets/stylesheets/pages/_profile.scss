@@ -1,7 +1,7 @@
 .profile-banner {
-  height: 20vh;
+  height: 30vh;
   width: 100vw;
-  background-size: cover;
+  background-color: rgb(205, 233, 255);
 
   position: relative;
 
@@ -30,10 +30,20 @@
     margin-bottom: 8px;
   }
 
-  .card-right-side p {
+  .card-right-side, .card-left-side p {
     font-size: small;
   }
 
+  & img {
+    position: absolute;
+    top: 12px;
+  }
+
+  button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
 }
 
 .not-colored-star {
@@ -42,4 +52,8 @@
 
 .colored-star {
   color: rgb(233, 182, 15);
+}
+
+.wishlist {
+  margin: 125px 0 50px 0;
 }
