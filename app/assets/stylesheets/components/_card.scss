@@ -1,8 +1,79 @@
 .santa-card {
   background-color: white;
-  padding: 32px 16px;
+  box-shadow: 0.1px -3px 12px rgba(0,0,0,0.2);
+
+  padding: 8px 32px;
+  margin: 32px 16px;
+  height: 155px;
+  width: 175px;
+
+  border-radius: 16px;
+
+  position: relative;
+
+  p {
+    color: black;
+    background-color: white;
+    box-shadow: 0.1px -3px 12px rgba(0,0,0,0.2);
+    text-align: center;
+    
+    width: 100%;
+    padding: 8px 16px 8px 16px;
+
+    border-radius: 0 0 16px 16px;
+
+    position: absolute;
+    bottom: -20px;
+    left: 0px;
+  }
+
+  img {
+    position: absolute;
+    top: -15px;
+    left: 12px;
+  }
 }
 
-.user-info {
-  margin-left: 32px;
+.wish-card {
+  background-color: white;
+  box-shadow: 0.1px -3px 12px rgba(0,0,0,0.2);
+
+  padding: 8px 32px;
+  margin: 32px 16px;
+  height: 155px;
+  width: 175px;
+
+  border-radius: 16px;
+
+  position: relative;
+
+  img {
+    height: 120px;
+    position: absolute;
+    top: -16px;
+    left: 27px;
+  }
+
+  #category {
+    font-size: small;
+  }
+
+  .wish-info {
+    color: black;
+    text-align: center;
+    
+    width: 100%;
+    padding: 8px 16px 8px 16px;
+
+    border-radius: 0 0 16px 16px;
+
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+  }
+
+  p {
+    margin: 0;
+    text-align: left;
+  }
 }

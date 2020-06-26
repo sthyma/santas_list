@@ -1,0 +1,58 @@
+.profile-banner {
+  height: 30vh;
+  background-color: rgb(205, 233, 255);
+
+  position: relative;
+
+  .user-info-card {
+    background-color: white;
+    box-shadow: 0.1px 3px 12px rgba(0,0,0,0.2);
+
+    width: 75vw;
+    padding: 16px 32px 0px 32px;
+
+    border-radius: 16px;
+
+    position: absolute;
+    top: 160px;
+  }
+
+  .card-right-side, .card-left-side {
+    width: 50%;
+  }
+
+  .section-label {
+    margin-bottom: 0;
+  }
+
+  .section-value {
+    margin-bottom: 8px;
+  }
+
+  .card-right-side, .card-left-side p {
+    font-size: small;
+  }
+
+  & img {
+    position: absolute;
+    top: 12px;
+  }
+
+  button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+}
+
+.not-colored-star {
+  color: rgb(212, 212, 212);
+}
+
+.colored-star {
+  color: rgb(233, 182, 15);
+}
+
+.wishlist {
+  margin: 125px 0 50px 0;
+}
