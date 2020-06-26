@@ -1,0 +1,26 @@
+.form-banner {
+  height: 155px;
+  background-color: $santa-baby-blue;
+  img {
+    height: 100px
+  }
+}
+
+.login-form {
+  position: relative;
+  p {
+    margin-top: 64px;
+  }
+}
+
+.form-control {
+  border-radius: 16px;
+}
+
+.form-actions {
+  width: 300px;
+  & input {
+    position: absolute;
+    left: 200px;
+  }
+}
