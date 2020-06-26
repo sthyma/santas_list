@@ -1,3 +1,4 @@
+// Santa card
 .santa-card {
   background-color: white;
   box-shadow: 0.1px -3px 12px rgba(0,0,0,0.2);
@@ -34,24 +35,23 @@
   }
 }
 
+// Wish card
 .wish-card {
   background-color: white;
   box-shadow: 0.1px -3px 12px rgba(0,0,0,0.2);
 
   padding: 8px 32px;
   margin: 32px 16px;
-  height: 155px;
-  width: 175px;
+  height: 210px;
+  width: 200px;
 
   border-radius: 16px;
 
   position: relative;
 
   img {
-    height: 120px;
-    position: absolute;
-    top: -16px;
-    left: 27px;
+    height: 100px;
+    margin-left: 20px;
   }
 
   #category {
@@ -59,10 +59,12 @@
   }
 
   .wish-info {
+    background-color: $santa-baby-blue;
     color: black;
     text-align: center;
     
     width: 100%;
+    height: 40%;
     padding: 8px 16px 8px 16px;
 
     border-radius: 0 0 16px 16px;
