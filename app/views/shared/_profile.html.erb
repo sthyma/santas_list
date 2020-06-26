@@ -44,8 +44,10 @@
       <p></p>
     </div>
   </div>
-    <%= link_to new_wish_path do %>
-      <button class="btn btn-santa">Ajouter un souhait</button>
+    <% if @user == current_user %>
+      <%= link_to new_wish_path do %>
+        <button class="btn btn-santa">Ajouter un souhait</button>
+      <% end %>
     <% end %>
 </div>
 
