@@ -8,7 +8,7 @@
   <% else %>
     <h2>Bonjour, bonjour !</h2>
     <p><strong>Bien content de te voir par ici ! Ici, aucune formalité ! Alors tire-toi une bûche et fais-toi un bon café avant de débuter. Fais comme chez toi !</strong></p>
-    <p>Ici, tu pourras consulter la liste des récipiendaires de cadeaux de Noël pour l'année <%= Time.now.year %>. </p>
+    <p>Tu pourras consulter sur ce site la liste des récipiendaires de cadeaux de Noël pour l'année <%= Time.now.year %>. </p>
 
     <p>Es-tu récipiendaire ? Connecte-toi en cliquant sur le bonhomme au bas de l'écran !</p>
   <% end %>
@@ -28,11 +28,12 @@
 
             <!--Age-->
             <p>Âge : 
-            <% age = Date.today.year - user.birthday.year
-               age -= 1 if Date.today < user.birthday + age.years %>
-            <% if age <= 1 %>
-              <%= age %> an
+            <% age = Date.today.year - user.birthday.year %>
+            <% if age <= 2 %>
+              <% age_in_months = (Date.today.year * 12 + Date.today.month) - (user.birthday.year * 12 + user.birthday.month) %>
+              <%= age_in_months %> mois
             <% else %>
+              <% age -= 1 if Date.today < user.birthday + age.years %>
               <%= age %> ans
             <% end %>
             </p>

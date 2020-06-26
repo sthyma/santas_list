@@ -11,3 +11,11 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+// Common style to all pages
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
