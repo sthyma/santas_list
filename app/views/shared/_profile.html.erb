@@ -17,7 +17,7 @@
           <p><%= age %> ans</p>
       <% end %>
       <p class="section-label"><strong>Adresse:</strong></p>
-      <p class="section-label">123 rue des Enfants</p>
+      <p class="section-label">5470 av de la Mère Noël</p>
     </div>
 
     <div class="card-right-side">
@@ -58,7 +58,7 @@
   <div class="row d-flex justify-content-center align-items-center">
     <% @user_wishes.each do |wish| %>
       <div class="wish-card">
-        <%= image_tag "https://image.flaticon.com/icons/svg/2987/2987881.svg" %>
+        <%= image_tag wish.category.image %>
         <div class="wish-info">
           <% if wish.name.length > 20 %>
             <p><strong><%= wish.name.first(20) %>...</strong></p>
