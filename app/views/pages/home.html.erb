@@ -1,9 +1,13 @@
-<div class="container mt-3">
-  <h1>Bienvenue chez Santa's List!</h1>
+<div class="container mb-5">
+  <div class="d-flex justify-content-center align-items-center my-4 text-center">
+    <h1>Bienvenue chez Santa's List!</h1>
+  </div>
 
+  <%# Intro text %>
+  <div class="intro-text d-flex justify-content-center align-items-center flex-column my-4">
   <% if user_signed_in? %>
-    <p><strong>Salut, <%= current_user.name %> !</strong></p>
-    <p>Alors, es-tu prêt à me dire ce que tu aimerais recevoir pour Noël ? C'est par ici 👇</p>
+    <h2><strong>Salut, <%= current_user.name.capitalize %> !</strong></h2>
+    <p style="text-align: center">Alors, es-tu prêt à me dire ce que tu aimerais recevoir pour Noël ?<br> C'est par ici 👇</p>
     <%= link_to 'Créer un voeu', new_wish_path, class: 'btn btn-primary' %>
   <% else %>
     <p><strong>Aucune formalité ici, tire-toi une bûche et fais-toi un bon café avant de débuter. Fais comme chez toi !</strong></p>
@@ -11,14 +15,48 @@
 
     <p>Es-tu récipiendaire ? Connecte-toi en cliquant sur le bonhomme au bas de l'écran !</p>
   <% end %>
+  </div>
 
   <%# User cards %>
   <div class="container">
-    <div class="row">
+    <div class="d-flex justify-content-center align-items-center text-center">
+      <h2>Voici tous les récipiendaires de cette année</h2>
+    </div>
+    <div class="row d-flex justify-content-center align-items-center">
       <% @users.each do |user| %>
-        <div class="col-sm-12 col-md-4 santa-card shadow my-3">
+        <div class="col-sm-12 col-md-3 santa-card shadow m-3 d-flex">
           <%= image_tag user.avatar, class: "card-avatar" %>
-          <h2><%= user.name.capitalize %></h2>
+          <div class="user-info">
+            <h3><%= user.name.capitalize %></h3>
+
+            <!--Age-->
+            <p>Âge : 
+            <% age = Date.today.year - user.birthday.year
+               age -= 1 if Date.today < user.birthday + age.years %>
+            <% if age <= 1 %>
+              <%= age %> an
+            <% else %>
+              <%= age %> ans
+            <% end %>
+            </p>
+
+            <!--Wishes-->
+            <p>
+              <% if @wishes.find_by(user: user) == nil %>
+              <!-- When migration done, need to find where position == 1>
+                <% @wishes.where(user: user).each do |wish| %>
+                  <%= wish.name.downcase %>
+                <% end %>-->
+                <%= user.name.capitalize %> n'a malheureusement encore aucun voeu...
+              <% else %>
+                Son plus grand voeu serait de recevoir un
+                <strong><%= @wishes.find_by(user: user).name.downcase %></strong>.
+              <% end %>
+            </p>
+
+            <!-- More info -->
+            <%= link_to 'En savoir plus', user_path(user), class: 'btn btn-primary'%>
+          </div>
 
         </div>
       <%end %>
