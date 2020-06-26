@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   
   resources :wishes, only: [:new, :create, :edit, :update, :destroy]
+  resources :users, only: [:show]
 end
