@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Santa's List</title>
+    <title>Santa's List - Liste de Noël pour enfants sages et moins sages</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="description" content="Santa's List est une liste de Noël numérique, regroupant les enfants sages et ceux moins sages, pour qu'ils puissent mettre en ligne leurs plus grands souhaits de cadeaux pour Noël <%= Time.now.year %>">
+
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="Santa's List - Liste de Noël pour enfants sages et moins sages" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <!--
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="" />-->
+    <meta property="og:site_name" content="Santa's List - Liste de Noël pour enfants sages et moins sages" />
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
