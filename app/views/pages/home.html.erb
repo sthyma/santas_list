@@ -1,10 +1,6 @@
 <div class="container mb-5">
-  <div class="d-flex justify-content-center align-items-center my-4 text-center">
-    <h1>Bienvenue chez Santa's List!</h1>
-  </div>
-
   <%# Intro text %>
-  <div class="intro-text d-flex justify-content-center align-items-center flex-column my-4">
+  <div class="intro-text d-flex justify-content-center align-items-center flex-column" id="intro">
   <% if user_signed_in? %>
     <h2><strong>Salut, <%= current_user.name.capitalize %> !</strong></h2>
     <p style="text-align: center">Alors, es-tu prêt à me dire ce que tu aimerais recevoir pour Noël ?<br> C'est par ici 👇</p>
@@ -18,9 +14,9 @@
   </div>
 
   <%# User cards %>
-  <div class="container">
-    <div class="d-flex justify-content-center align-items-center text-center">
-      <h2>Voici tous les récipiendaires de cette année</h2>
+  <div class="container my-5">
+    <div class="d-flex justify-content-start align-items-center text-center">
+      <h3>Récipiendaires</h3>
     </div>
     <div class="row d-flex justify-content-center align-items-center">
       <% @users.each do |user| %>

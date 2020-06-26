@@ -17,8 +17,8 @@ User.create!(name: "Reyna", email: "reyna@xmas.ca", birthday: Date.strptime("06/
 # Eric
 User.create!(name: "Eric", email: "eric@xmas.ca", birthday: Date.strptime("11/17/2019", "%m/%d/%Y"), avatar: "https://image.flaticon.com/icons/svg/2945/2945403.svg", password: "iameric")
 
-# Daenyan
-User.create!(name: "Daenyan", email: "daenyan@xmas.ca", birthday: Date.strptime("07/13/2019", "%m/%d/%Y"), avatar: "https://image.flaticon.com/icons/svg/2945/2945360.svg", password: "iamdaenyan")
+# Daenian
+User.create!(name: "Daenian", email: "daenian@xmas.ca", birthday: Date.strptime("07/13/2019", "%m/%d/%Y"), avatar: "https://image.flaticon.com/icons/svg/2945/2945360.svg", password: "iamdaenian")
 
 # Emma
 User.create!(name: "Emma", email: "emma@xmas.ca", birthday: Date.strptime("09/13/2018", "%m/%d/%Y"), avatar: "https://image.flaticon.com/icons/svg/2945/2945234.svg", password: "iamemma")

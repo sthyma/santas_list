@@ -4,10 +4,11 @@
   <% if user_signed_in? %>
     <% if @user == current_user %>
       <h1>Hello, <%= current_user.name.capitalize %> !</h2>
+      <%= link_to 'Ajouter un voeu', new_wish_path, class: 'btn btn-primary'%>
     <% else %>
       <h1>Les voeux de <%= @user.name.capitalize %></h1>
     <% end %>
   <% end %>
   </div>
-  
+
 </div>
