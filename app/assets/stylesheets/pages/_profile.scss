@@ -1,0 +1,45 @@
+.profile-banner {
+  height: 20vh;
+  width: 100vw;
+  background-size: cover;
+
+  position: relative;
+
+  .user-info-card {
+    background-color: white;
+    box-shadow: 0.1px 3px 12px rgba(0,0,0,0.2);
+
+    width: 75vw;
+    padding: 16px 32px 0px 32px;
+
+    border-radius: 16px;
+
+    position: absolute;
+    top: 140px;
+  }
+
+  .card-right-side, .card-left-side {
+    width: 50%;
+  }
+
+  .section-label {
+    margin-bottom: 0;
+  }
+
+  .section-value {
+    margin-bottom: 8px;
+  }
+
+  .card-right-side p {
+    font-size: small;
+  }
+
+}
+
+.not-colored-star {
+  color: rgb(212, 212, 212);
+}
+
+.colored-star {
+  color: rgb(233, 182, 15);
+}

@@ -1,0 +1,41 @@
+<div class="profile-banner d-flex justify-content-center" style="background-image:url(<%=asset_path('trees.jpg')%>">
+  <%= image_tag @user.avatar, class: 'profile-avatar' %>
+  <div class="user-info-card d-flex justify-content-around">
+
+    <div class="card-left-side">
+      <h4><%= @user.name.capitalize %></h4>
+      <% age = Date.today.year - @user.birthday.year %>
+        <% if age <= 2 %>
+          <% age_in_months = (Date.today.year * 12 + Date.today.month) - (@user.birthday.year * 12 + @user.birthday.month) %>
+          <p><%= age_in_months %> mois</p>
+        <% else %>
+          <% age -= 1 if Date.today < @user.birthday + age.years %>
+          <p><%= age %> ans</p>
+      <% end %>
+    </div>
+    <div class="card-right-side">
+      <p class="section-label"><strong>Méthode de livraison</strong></p>
+      <p class="section-value">Chimney</p>
+      
+      <p class="section-label"><strong>Politesse</strong></p>
+      <p class="section-value">
+        <i class="fas fa-star colored-star"></i>
+        <i class="fas fa-star colored-star"></i>
+        <i class="fas fa-star colored-star"></i>
+        <i class="fas fa-star colored-star"></i>
+        <i class="fas fa-star not-colored-star"></i>
+      </p>
+
+      <p class="section-label"><strong>Foi en Père Noël</strong></p>
+      <p class="section-label">
+        <i class="fas fa-star colored-star"></i>
+        <i class="fas fa-star not-colored-star"></i>
+        <i class="fas fa-star not-colored-star"></i>
+        <i class="fas fa-star not-colored-star"></i>
+        <i class="fas fa-star not-colored-star"></i>
+      </p>
+      <p></p>
+    </div>
+  </div>
+</div>
+
