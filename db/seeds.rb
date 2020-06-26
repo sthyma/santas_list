@@ -1,7 +1,7 @@
 puts("Cleaning database")
 Wish.destroy_all
-# Category.destroy_all
-# User.destroy_all
+Category.destroy_all
+User.destroy_all
 
 puts("Creating categories")
 categories_hash = {
