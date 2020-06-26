@@ -1,0 +1,9 @@
+.btn-santa {
+  border-radius: 32px;
+  background-color: $santa-red;
+  color: white;
+  transition: 0.3s;
+  &:hover {
+    background-color: $light-santa-red;
+  }
+}

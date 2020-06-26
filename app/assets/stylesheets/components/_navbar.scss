@@ -1,12 +1,36 @@
-.navbar-lewagon {
-  justify-content: space-between;
+.santa-navbar {
+  background: $santa-red;
+
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+
+  width: 100vw;
+  height: 8vh;
+  padding: 8px 0;
+  svg {
+    height: 30px;
+  }
+  img {
+    height: 30px;
+  }
+}
+
+#logo {
   background: white;
-}
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  
+  width: 100vw;
+  height: 8vh;
+  padding: 16px 0 8px 0;
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+  h1 {
+    color: $santa-red;
+  }
+  img {
+  height: 50px;
+  }
 }

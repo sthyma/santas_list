@@ -5,4 +5,6 @@ class PagesController < ApplicationController
     @users = User.all
     @wishes = Wish.all
   end
+
+  
 end
