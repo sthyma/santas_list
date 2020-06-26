@@ -1,22 +1,30 @@
-<div class="container add-margin-top">
-  <h2>Log in</h2>
-
-  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="form-inputs">
-      <%= f.input :name,
-                  required: false,
-                  autofocus: true,
-                  input_html: { autocomplete: "name" } %>
-      <%= f.input :password,
-                  required: false,
-                  input_html: { autocomplete: "current-password" } %>
-      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-    </div>
-
-    <div class="form-actions">
-      <%= f.button :submit, "Log in", class: 'btn btn-santa mb-4' %>
-    </div>
+<div class="form-banner d-flex justify-content-around align-items-center">
+  <%= image_tag asset_path('santa.svg') %>
+  <% User.all.shuffle.first(2).each do |user| %>
+    <%= image_tag user.avatar %>
   <% end %>
+</div>
 
-  <%= render "devise/shared/links" %>
+<div class="d-flex justify-content-center flex-column align-items-center">
+  <div class="container add-margin-top login-form d-flex justify-content-center flex-column align-items-center">
+    <h2>Log in</h2>
+
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-inputs">
+        <%= f.input :name,
+                    required: false,
+                    autofocus: true,
+                    input_html: { autocomplete: "name" } %>
+        <%= f.input :password,
+                    required: false,
+                    input_html: { autocomplete: "current-password" } %>
+        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Se connecter", class: 'btn btn-santa mb-4' %>
+      </div>
+    <% end %>
+    <p>As-tu oublié ton mot de passe ? <br>Contacte Stéphanie !</p>
+  </div>
 </div>

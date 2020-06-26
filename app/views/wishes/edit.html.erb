@@ -1,0 +1,13 @@
+<div class="form-banner d-flex justify-content-around align-items-center">
+  <%= render 'shared/back_btn'%>
+  <%= image_tag asset_path('santa.svg') %>
+  <%= image_tag current_user.avatar %>
+</div>
+
+<div class="d-flex justify-content-center flex-column align-items-center">
+  <div class="container add-margin-top login-form d-flex justify-content-center flex-column align-items-center">
+  <h2>Mettre à jour un souhait</h2>
+  <%= render 'form' %>
+  </div>
+</div>
+  

@@ -1,7 +1,7 @@
 puts("Cleaning database")
 Wish.destroy_all
-Category.destroy_all
-User.destroy_all
+# Category.destroy_all
+# User.destroy_all
 
 puts("Creating categories")
 categories_hash = {
@@ -17,7 +17,7 @@ categories_hash = {
 }
 
 categories_hash.each do |category, image|
-  Category.create!(name: category, image: image)
+  Category.find_or_create_by(name: category, image: image)
 end
 
 puts("Creating users")
@@ -54,11 +54,19 @@ User.create!(name: "Stephanie", email: "steph@xmas.ca", birthday: Date.strptime(
 # Tommy
 User.create!(name: "Tommy", email: "tommy@xmas.ca", birthday: Date.strptime("09/14/1996", "%m/%d/%Y"), avatar: "https://image.flaticon.com/icons/svg/2945/2945392.svg", password: "iamtommy", gender: 'M', address: '9499 rue le Grinch', delivery_method: 'Garage', politeness: 0, faith: 5)
 
+puts("Adding custom seeds for testing purposes")
+
 puts("Creating wishes")
 wishes = {
   "Teddy bear" => "Jouets",
   "Vingt Milles Lieues sous les Mers" => "Livres",
-  "iPhone 11" => "Électroniques"
+  "iPhone 11" => "Électroniques",
+  "Sofa" => "Maison",
+  "T-shirt" => "Vêtements",
+  "Soccer ball" => "Sports",
+  "Spotify Premium" => "Musique et films",
+  "Rouge à lèvres " => "Beauté",
+  "Carte cadeau Starbucks" => "Autres"
 }
 
 wishes.each do |wish, category|
@@ -66,5 +74,6 @@ wishes.each do |wish, category|
     Wish.create!(name: wish, category: Category.find_by(name: category), user: user)
   end
 end
+
 
 puts("Seeds done! Database is now populated.")

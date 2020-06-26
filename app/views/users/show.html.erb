@@ -1,3 +1,81 @@
-<%= render 'shared/profile'%>
-<div class="container">
+<%# Profile top %>
+<div class="profile-banner d-flex justify-content-center">
+  <%= image_tag @user.avatar, class: 'profile-avatar' %>
+
+  <%= render 'shared/back_btn'%>
+
+  <%# User info card %>
+  <div class="user-info-card d-flex justify-content-around">
+
+    <div class="card-left-side">
+      <h4><%= @user.name.capitalize %></h4>
+      <% age = Date.today.year - @user.birthday.year %>
+        <% if age <= 2 %>
+          <% age_in_months = (Date.today.year * 12 + Date.today.month) - (@user.birthday.year * 12 + @user.birthday.month) %>
+          <p><%= age_in_months %> mois</p>
+        <% else %>
+          <% age -= 1 if Date.today < @user.birthday + age.years %>
+          <p><%= age %> ans</p>
+      <% end %>
+      <p class="section-label"><strong>Adresse:</strong></p>
+      <p class="section-label"><%= @user.address %></p>
+    </div>
+
+    <div class="card-right-side">
+      <p class="section-label"><strong>Méthode de livraison</strong></p>
+      <p class="section-value"><%= @user.delivery_method %></p>
+      
+      <p class="section-label"><strong>Politesse</strong></p>
+      <p class="section-value">
+        <% @user.politeness.times do %>
+          <i class="fas fa-star colored-star"></i>
+        <% end %>
+        <% (5 - @user.politeness).times do %>
+          <i class="fas fa-star not-colored-star"></i>
+        <% end %>
+      </p>
+
+      <p class="section-label"><strong>Foi en Père Noël</strong></p>
+      <p class="section-label">
+        <% @user.faith.times do %>
+          <i class="fas fa-star colored-star"></i>
+        <% end %>
+        <% (5 - @user.faith).times do %>
+          <i class="fas fa-star not-colored-star"></i>
+        <% end %>
+      </p>
+      <p></p>
+    </div>
+  </div>
+    <% if @user == current_user %>
+      <%= link_to new_wish_path do %>
+        <button class="btn btn-santa">Ajouter un souhait</button>
+      <% end %>
+    <% end %>
+</div>
+
+<div class="container wishlist">
+  <div class="d-flex justify-content-center">
+    <% if @user == current_user %>
+      <div class="text-center">
+      <h4>Voici tes souhaits, <%= @user.name.capitalize %></h4>
+      <p>
+        Souviens-toi que tu as droit à un maximum de 10 souhaits !
+      </p>
+      </div>
+    <% else %>
+      <h4>Les souhaits de <%= @user.name.capitalize %></h4>
+    <% end %>
+  </div>
+  <div class="row d-flex justify-content-center align-items-center">
+    <% @user_wishes.each do |wish| %>
+      <% if @user == current_user %>
+        <%= link_to edit_wish_path(wish) do %>
+          <%= render partial: "shared/wish_card", locals: { wish: wish } %>
+        <% end %>
+      <% else %>
+        <%= render partial: "shared/wish_card", locals: { wish: wish } %>
+      <% end %>
+    <% end %>
+  </div>
 </div>
