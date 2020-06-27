@@ -1,27 +1,31 @@
+<% if edit_wish_path.include?("#{@wish.id}") %>
+  <% label = "Mettre à jour" %>
+  <% value = @categories.select { |category| category == @wish.category } %>
+<% else %>
+  <% label = "Ajouter" %>
+  <% value = "" %>
+<% end %>
+
 <%= simple_form_for(@wish) do |f| %>
   <%= f.input :name, label: 'Nom du souhait', required: false %>
   <%= f.input :category, label: 'Catégorie', 
-                         required: false,
-                         collection: @categories %>
+                        required: false,
+                        collection: @categories,
+                        selected: value %>
   <%= f.input :position, label: 'Position du souhait', 
-                         required: false, 
-                         as: :range,
-                         input_html: { min: '0', max: '20', 
-                         value: '0', class: "slider", 
-                         id: "myRange" } %>
+                        required: false, 
+                        as: :range,
+                        input_html: { min: '0', max: '20', 
+                        value: '0', class: "slider", 
+                        id: "myRange" } %>
   <p>
     <a href="#faq"><i class="fas fa-question"></i></a> 
     Position sélectionnée: <span id="wish-position"></span>
-    </p>
-  <%= f.button :submit, 'Ajouter mon souhait', class: 'btn-santa', id:'form-btn' %>
-<% end %>
-
-<div id="faq" class="container">
-  <h3>Foire aux questions - Souhait</h3>
-  <a href="<%= faq_path %>">Consulter la FAQ complète</a><br>
-  <div class="faq-wish">
-    <p><strong>Qu'est-ce qu'une <em>position du souhait</em> ?</strong></p>
-    <p>Une position du souhait te permet de placer chaque souhait de ta liste dans l'ordre que tu veux, pour que Père Noël et ses lutins puissent savoir ce que tu veux le plus ! <br><br> <strong>Note</strong> : Si tu laisses le Père Noël du glisseur à la position 0, le souhait n'aura pas de position, mais sera tout de même enregistré. </p>
+  </p>
+  <div class="d-flex justify-content-between align-items-center">
+  <%= f.button :submit, label, class: 'btn-santa', id:'form-btn' %>
+  <% if edit_wish_path.include?("#{@wish.id}") %>
+    <%= link_to 'Supprimer', wish_path(@wish), method: :delete, class: 'btn btn-santa', message: 'Are you sure?' %>
+  <% end %>
   </div>
-
-</div>
+<% end %>
