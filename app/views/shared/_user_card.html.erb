@@ -1,0 +1,6 @@
+<div class="santa-card">
+  <%= link_to user_path(user) do %>
+  <%= image_tag user.avatar, class: "card-avatar" %>
+  <p><strong><%= user.name.capitalize %></strong></p>
+  <% end %>
+</div>

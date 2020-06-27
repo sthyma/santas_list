@@ -31,12 +31,7 @@
     </div>
     <div class="row d-flex justify-content-center align-items-center">
       <% @users.each do |user| %>
-        <div class="santa-card">
-          <%= link_to user_path(user) do %>
-          <%= image_tag user.avatar, class: "card-avatar" %>
-          <p><strong><%= user.name.capitalize %></strong></p>
-          <% end %>
-        </div>
+        <%= render partial: "shared/user_card", locals: { user: user } %>
       <% end %>
     </div>
   </div>
