@@ -8,6 +8,9 @@
     <%= link_to user_path(current_user) do %>
       <%= image_tag current_user.avatar %>
     <% end %>
+    <%= link_to faq_path do %>
+      <%= image_tag asset_path('faq.svg') %>
+    <% end %>
     <%= link_to destroy_user_session_path, method: :delete do %>
       <%= image_tag asset_path('signout.svg') %>
     <% end %>
@@ -17,6 +20,9 @@
   <%# Signed out user navbar %>
     <%= link_to root_path do %>
       <%= image_tag asset_path('home.svg') %>
+    <% end %>
+    <%= link_to faq_path do %>
+      <%= image_tag asset_path('faq.svg') %>
     <% end %>
     <%= link_to new_user_session_path do %>
       <%= image_tag asset_path('signin.svg') %>

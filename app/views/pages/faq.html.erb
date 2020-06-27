@@ -1,0 +1,41 @@
+<div class="faq-banner d-flex justify-content-center align-items-center">
+  <h1>Foire aux questions</h1>
+</div>
+
+<div class="container mt-5 whole-faq">
+
+  <div class="faq-section" id="general">
+  <h2>Généralités</h2>
+  <div>
+    <p><strong>Qu'est-ce Santa's List ?</strong></p>
+    <p>Santa's List est la version numérique de la liste des récipiendaires de cadeaux de Noël pour l'année <%= Time.now.year %>. Maintenant, plus de fichier PDF ni de doigt qui fait la course sur ton écran cellulaire pour retrouver le fameux fichier PDF que Christine a envoyé il y a un mois ! Tout est centralisé ici, et est mis à jour fréquemment.</p>
+  </div>
+  
+  <div>
+    <p><strong>À quoi sert Santa's List ?</strong></p>
+    <p>
+      Santa's List a été pensé dans une perspective d'efficacité, d'économie et de sous-consommation. Maintenant, plus de fichier PDF ni de doigt qui fait la course sur ton écran cellulaire pour retrouver le fameux fichier PDF que Christine a envoyé il y a un mois ! Tout est centralisé ici, et est mis à jour fréquemment.
+      <br>
+      D'aileurs, les récipiendaires de cadeaux auront leur mot à dire sur ce site web, puisqu'ils peuvent ajouter leur propre liste de souhaits ! Donc, Père Noël pourra leur offrir ce qu'ils désirent réellement !
+    </p>
+  </div>
+  </div>
+
+  <div class="faq-section" id="wishes">
+  <h2>Souhaits</h2>
+  <% if user_signed_in? %>
+    <div>
+      <p><strong>Pourquoi ai-je seulement droit à un maximum de douze (12) souhaits ?</strong></p>
+      <p>Père Noël et ses lutins sont fort occupés à exaucer du mieux qu'ils peuvent les souhaits des enfants du monde entier. Pour faciliter leur travail, soumets une courte liste de souhaits, de 10 items maximum, pour avoir plus de chance de recevoir ce que tu veux réellement !</p>
+    </div>
+
+    <div>
+      <p><strong>Qu'est-ce qu'une <em>position du souhait</em> ?</strong></p>
+      <p>Une position du souhait te permet de placer chaque souhait de ta liste dans l'ordre que tu veux, pour que Père Noël et ses lutins puissent savoir ce que tu veux le plus ! <br> <strong>Note</strong> : Si tu laisses le Père Noël du glisseur à la position 0, le souhait n'aura pas de position, mais sera tout de même enregistré. </p>
+    </div>
+  <% end %>
+  </div>
+  <div class="d-flex justify-content-center">
+    <p><strong>-- Fin du FAQ --</strong></p>
+  </div>
+</div>
