@@ -1,4 +1,13 @@
 <div class="wish-card">
+  <% if wish.position != nil %>
+    <div class="wish-num">
+      <% if wish.position >= 10 %>
+        <h3 class="big-num"><%= wish.position %></h3>
+      <% else %>
+        <h3 class="small-num"><%= wish.position %></h3>
+      <% end %>
+    </div>
+  <% end %>
   <%= image_tag wish.category.image %>
   <div class="wish-info">
     <p><strong><%= wish.name %></strong></p>

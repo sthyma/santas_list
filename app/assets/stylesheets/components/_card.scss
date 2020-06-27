@@ -59,7 +59,7 @@
   }
 
   .wish-info {
-    // background-color: $santa-baby-blue;
+    background-color: $santa-baby-blue;
     color: black;
     text-align: center;
     
@@ -81,7 +81,32 @@
 
   #plus-wish {
     position: absolute;
-    top: -150px;
-    right: -14px;
+    top: -30px;
+    right: 5px;
+  }
+
+  .wish-num {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: $santa-red;
+    position: absolute;
+    top: -15px;
+    left: -15px;
+  }
+
+  h3 {
+    color: white;
+    position: absolute;
+  }
+  
+  .big-num {
+    top: 10px;
+    left: 10px;
+  }
+
+  .small-num {
+    top: 10px;
+    left: 17px;
   }
 }

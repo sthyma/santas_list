@@ -33,10 +33,6 @@
     <div class="d-flex justify-content-start align-items-center text-center">
       <h3>Récipiendaires</h3>
     </div>
-    <div class="row d-flex justify-content-center align-items-center">
-      <% @users.each do |user| %>
-        <%= render partial: "shared/user_card", locals: { user: user } %>
-      <% end %>
-    </div>
+    <%= render 'shared/tabs'%>
   </div>
 </div>
