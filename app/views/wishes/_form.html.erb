@@ -6,7 +6,7 @@
   <%= f.input :position, label: 'Position du souhait', 
                          required: false, 
                          as: :range,
-                         input_html: { min: '0', max: '12', 
+                         input_html: { min: '0', max: '20', 
                          value: '0', class: "slider", 
                          id: "myRange" } %>
   <p>
@@ -18,15 +18,10 @@
 
 <div id="faq" class="container">
   <h3>Foire aux questions - Souhait</h3>
-
-  <div class="faq-wish">
-    <p><strong>Pourquoi ai-je seulement droit à un maximum de dix (10) souhaits ?</strong></p>
-    <p>Père Noël et ses lutins sont fort occupés à exaucer du mieux qu'ils peuvent les souhaits des enfants du monde entier. Pour faciliter leur travail, soumets une courte liste de souhaits, de 10 items maximum, pour avoir plus de chance de recevoir ce que tu veux réellement !</p>
-  </div>
-
+  <a href="<%= faq_path %>">Consulter la FAQ complète</a><br>
   <div class="faq-wish">
     <p><strong>Qu'est-ce qu'une <em>position du souhait</em> ?</strong></p>
-    <p>Une position du souhait te permet de placer chaque souhait de ta liste dans l'ordre que tu veux, pour que Père Noël et ses lutins puissent savoir ce que tu veux le plus ! <br> <strong>Note</strong> : Si tu laisses le Père Noël du glisseur à la position 0, le souhait n'aura pas de position, mais sera tout de même enregistré. </p>
+    <p>Une position du souhait te permet de placer chaque souhait de ta liste dans l'ordre que tu veux, pour que Père Noël et ses lutins puissent savoir ce que tu veux le plus ! <br><br> <strong>Note</strong> : Si tu laisses le Père Noël du glisseur à la position 0, le souhait n'aura pas de position, mais sera tout de même enregistré. </p>
   </div>
 
 </div>

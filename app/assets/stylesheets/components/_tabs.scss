@@ -1,0 +1,18 @@
+.custom-tabs {
+  border: none;
+  background-color: $santa-baby-blue;
+  width: 300px;
+  border-radius: 32px;
+  .active {
+      border-radius: 32px;
+      font-weight: bold;
+      background-color: $santa-red !important;
+      color: white !important;
+  }
+
+  a {
+    color: $dark-grey;
+    width: 100px;
+    text-align: center;
+  }
+}

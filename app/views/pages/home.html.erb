@@ -3,25 +3,29 @@
 <div class="container mb-5">
   <%# Intro text %>
   <div class="intro-text d-flex justify-content-center align-items-center flex-column add-margin-top" id="intro">
-  <% if user_signed_in? %>
-    <h2><strong>Salut, <%= current_user.name.capitalize %> !</strong></h2>
-    <p style="text-align: center">Alors, 
+    <% if user_signed_in? %>
+      <h2><strong>Salut, <%= current_user.name.capitalize %> !</strong></h2>
+      <div class="intro-parag-signed-in">
+        <p>Alors, 
 
-    <% if current_user.gender == 'F'%>
-      prête
+        <% if current_user.gender == 'F'%>
+          prête
+        <% else %>
+          prêt
+        <% end %>
+        
+        à me dire ce que tu aimerais recevoir pour Noël ?<br> <span>C'est par ici 👇</span></p>
+      </div>
+      <%= link_to 'Ajouter un souhait', new_wish_path, class: 'btn btn-santa' %>
     <% else %>
-      prêt
-    <% end %>
-    
-    à me dire ce que tu aimerais recevoir pour Noël ?<br> C'est par ici 👇</p>
-    <%= link_to 'Ajouter un souhait', new_wish_path, class: 'btn btn-santa' %>
-  <% else %>
-    <h2>Bonjour, bonjour !</h2>
-    <p><strong>Bien content de te voir par ici ! Ici, aucune formalité ! Alors tire-toi une bûche et fais-toi un bon café avant de débuter. Fais comme chez toi !</strong></p>
-    <p>Tu pourras consulter sur ce site la liste des récipiendaires de cadeaux de Noël pour l'année <%= Time.now.year %>. </p>
+      <h2>Bonjour, bonjour !</h2>
+      <div class="intro-parag">
+        <p><strong>Bien content de te voir par ici ! Ici, aucune formalité ! Alors tire-toi une bûche et fais-toi un bon café avant de débuter. Fais comme chez toi !</strong></p>
+        <p>Tu pourras consulter sur ce site la liste des récipiendaires de cadeaux de Noël pour l'année <%= Time.now.year %>. </p>
 
-    <p>Es-tu récipiendaire ? Connecte-toi en cliquant sur le bonhomme au bas de l'écran !</p>
-  <% end %>
+        <p>Es-tu récipiendaire ? Connecte-toi en cliquant sur le button le plus à droite au bas de l'écran !</p>
+      </div>
+    <% end %>
   </div>
 
   <%# User cards %>
@@ -29,15 +33,6 @@
     <div class="d-flex justify-content-start align-items-center text-center">
       <h3>Récipiendaires</h3>
     </div>
-    <div class="row d-flex justify-content-center align-items-center">
-      <% @users.each do |user| %>
-        <div class="santa-card">
-          <%= link_to user_path(user) do %>
-          <%= image_tag user.avatar, class: "card-avatar" %>
-          <p><strong><%= user.name.capitalize %></strong></p>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
+    <%= render 'shared/tabs'%>
   </div>
 </div>
