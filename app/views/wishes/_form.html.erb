@@ -1,17 +1,17 @@
-<% if edit_wish_path.include?("#{@wish.id}") %>
-  <% label = "Mettre à jour" %>
-  <% value = @categories.select { |category| category == @wish.category } %>
-<% else %>
+<% if params[:id] == nil %>
   <% label = "Ajouter" %>
   <% value = "" %>
+<% else %>
+  <% label = "Mettre à jour" %>
+  <% value = @categories.select { |category| category == @wish.category } %>
 <% end %>
 
 <%= simple_form_for(@wish) do |f| %>
   <%= f.input :name, label: 'Nom du souhait', required: false %>
   <%= f.input :category, label: 'Catégorie', 
                         required: false,
-                        collection: @categories,
-                        selected: value %>
+                        collection: @categories %>
+                        <%# , selected: value %>
   <%= f.input :position, label: 'Position du souhait', 
                         required: false, 
                         as: :range,
@@ -24,7 +24,7 @@
   </p>
   <div class="d-flex justify-content-between align-items-center">
   <%= f.button :submit, label, class: 'btn-santa', id:'form-btn' %>
-  <% if edit_wish_path.include?("#{@wish.id}") %>
+  <% if params[:id] != nil %>
     <%= link_to 'Supprimer', wish_path(@wish), method: :delete, class: 'btn btn-santa', message: 'Are you sure?' %>
   <% end %>
   </div>

@@ -28,13 +28,16 @@ class WishesController < ApplicationController
   end 
   
   def update
-    @wish.category = Category.find_by(name: (params[:wish][:category]).capitalize)
+    name = params[:wish][:name]
+    category = Category.find_by(name: (params[:wish][:category]).capitalize)
     
-    
-    @wish.position = (params[:wish][:position]).to_i
-    @wish.position = nil if (params[:wish][:position]).to_i == 0
-    
-    if @wish.update(wishes_params)
+    if (params[:wish][:position]).to_i == 0
+      position = nil
+    else
+      position = (params[:wish][:position]).to_i
+    end
+
+    if @wish.update(name: name, category: category, position: position)
       redirect_to user_path(current_user)
       flash.notice = "🤖 Ton voeu a été mis à jour! Espèrons que Père Noël l'exaucera!"
     else
