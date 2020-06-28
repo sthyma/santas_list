@@ -6,7 +6,7 @@
   padding: 8px 32px;
   margin: 32px 16px;
   height: 155px;
-  width: 150px;
+  width: 140px;
 
   border-radius: 16px;
 
@@ -31,7 +31,7 @@
   img {
     position: absolute;
     top: -15px;
-    left: 2px;
+    left: -5px;
   }
 }
 
@@ -43,7 +43,7 @@
   padding: 8px 32px;
   margin: 32px 16px;
   height: 230px;
-  width: 170px;
+  width: 155px;
 
   border-radius: 16px;
 
@@ -52,6 +52,8 @@
   img {
     height: 100px;
     margin-top: 16px;
+    position: absolute;
+    left: 27.5px;
   }
 
   #category {
@@ -81,7 +83,7 @@
 
   #plus-wish {
     position: absolute;
-    top: -30px;
+    top: -35px;
     right: 5px;
   }
 
@@ -92,7 +94,7 @@
     background-color: $santa-red;
     position: absolute;
     top: -15px;
-    left: -15px;
+    left: -5px;
   }
 
   h3 {
