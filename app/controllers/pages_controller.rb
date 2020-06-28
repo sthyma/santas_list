@@ -9,5 +9,6 @@ class PagesController < ApplicationController
   end
 
   def faq
+    @categories = Category.all.map { |category| category.name }
   end
 end

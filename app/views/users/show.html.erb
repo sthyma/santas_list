@@ -54,8 +54,8 @@
     <% end %>
 </div>
 
-<div class="container wishlist">
-  <div class="d-flex justify-content-center">
+<div class="container wishlist d-flex justify-content-center align-items-center flex-column">
+  <div>
     <% if @user == current_user %>
       <div class="text-center">
       <h4>Voici tes souhaits, <%= @user.name.capitalize %></h4>
@@ -67,6 +67,7 @@
       <h4>Les souhaits de <%= @user.name.capitalize %></h4>
     <% end %>
   </div>
+  
   <div class="row d-flex justify-content-center align-items-center">
     <% @user_wishes.each do |wish| %>
       <%= render partial: "shared/wish_card", locals: { wish: wish } %>

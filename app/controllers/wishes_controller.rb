@@ -7,8 +7,10 @@ class WishesController < ApplicationController
   end
 
   def create
-    # Category expected got "56", which is an instance of string
-    @wish = Wish.new(wishes_params)
+    @wish = Wish.new
+    @wish.name = params[:wish][:name]
+    @wish.category = Category.find((params[:wish][:category]).to_i)
+    @wish.position = (params[:wish][:position]).to_i
     @wish.user = current_user
 
     if @wish.save
@@ -22,23 +24,31 @@ class WishesController < ApplicationController
   end
 
   def edit
+    @categories = Category.all.map { |category| category.name }
   end 
   
   def update
-    @wish = Wish.update(wishes_params)
+    name = params[:wish][:name]
+    category = Category.find_by(name: (params[:wish][:category]).capitalize)
+    
+    if (params[:wish][:position]).to_i == 0
+      position = nil
+    else
+      position = (params[:wish][:position]).to_i
+    end
 
-    if @wish.save
-      redirect_to root_path #Change this to profile when User controller generated
+    if @wish.update(name: name, category: category, position: position)
+      redirect_to user_path(current_user)
       flash.notice = "🤖 Ton voeu a été mis à jour! Espèrons que Père Noël l'exaucera!"
     else
+      redirect_to user_path(current_user)
       flash.alert = "🤖 Oh-oh... Il y a un petit problème interne... Peux-tu réessayer?"
-      render :edit
     end    
   end
   
   def destroy
     if @wish.destroy
-      redirect_to root_path #Change this to profile when User controller generated
+      redirect_to user_path(current_user)
       flash.notice = "🤖 Ton voeu a bel et bien été détruit"
     else
       flash.alert = "🤖 Oh-oh... Il y a un petit problème interne... Peux-tu réessayer?"
@@ -51,6 +61,6 @@ class WishesController < ApplicationController
   end
 
   def wishes_params
-    params.require(:wish).permit(:name, :category)
+    params.require(:wish).permit(:name, :category_id, :position)
   end
 end
