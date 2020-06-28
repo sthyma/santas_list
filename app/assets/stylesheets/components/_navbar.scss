@@ -12,26 +12,45 @@
   svg {
     height: 30px;
   }
+
   img {
     height: 30px;
   }
 }
 
 #logo {
-  background: white;
-
   position: fixed;
   z-index: 1;
   top: 0;
   
   width: 100vw;
   height: 8vh;
-  padding: 25px 0 8px 0;
+  padding: 40px 0;
+}
+
+.top-navbar {
+  background: $santa-baby-blue;
+  transition: 0.3s;
 
   h1 {
     color: $santa-red;
   }
+
   img {
   height: 50px;
+  margin-right: 8px;
+  }
+}
+
+.top-navbar-scroll {
+  background: $santa-baby-blue;
+
+  h1 {
+    color: $santa-red;
+  }
+
+  img {
+  height: 50px;
+  margin-right: 8px;
   }
 }
