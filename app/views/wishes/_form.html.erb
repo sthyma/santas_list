@@ -1,9 +1,9 @@
 <% if params[:id] == nil %>
   <% label = "Ajouter" %>
-  <% value = "" %>
+  <%# value = "" %>
 <% else %>
   <% label = "Mettre à jour" %>
-  <% value = @categories.select { |category| category == @wish.category } %>
+  <%# value = @categories.select { |category| category == @wish.category } %>
 <% end %>
 
 <%= simple_form_for(@wish) do |f| %>
