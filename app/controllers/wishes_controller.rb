@@ -41,8 +41,8 @@ class WishesController < ApplicationController
       redirect_to user_path(current_user)
       flash.notice = "🤖 Ton voeu a été mis à jour! Espèrons que Père Noël l'exaucera!"
     else
+      redirect_to user_path(current_user)
       flash.alert = "🤖 Oh-oh... Il y a un petit problème interne... Peux-tu réessayer?"
-      render :edit
     end    
   end
   
