@@ -1,0 +1,65 @@
+<div class="faq-banner d-flex justify-content-center align-items-center">
+  <h1>Foire aux questions</h1>
+</div>
+
+<div class="container mt-5 whole-faq">
+
+  <div class="faq-section" id="general">
+    <h2>Généralités</h2>
+      <% @questions.where(category: "Généralités").each do |question| %>
+        <%= render partial: "q_and_a", locals: { question: question } %>
+      <% end %>
+  </div>
+
+  <div class="faq-section" id="general">
+    <h2>Compte</h2>
+      <% @questions.where(category: "Compte").each do |question| %>
+        <%= render partial: "q_and_a", locals: { question: question } %>
+      <% end %>
+  </div>
+
+  <div class="faq-section" id="wishes">
+    <h2>Souhaits</h2>
+      <% @questions.where(category: "Souhaits").each do |question| %>
+        <%= render partial: "q_and_a", locals: { question: question } %>
+      <% end %>
+
+    <% if user_signed_in? %>
+      <div>
+        <p><strong>Ai-je une limite de souhaits ?</strong></p>
+        <p>La limite de souhaits a été établie à 20 souhaits par enfant. Si tu souhaite en rajotuer plus, contacte Stéphanie !</p>
+      </div>
+
+      <div>
+        <p><strong>Qu'est-ce qu'une <em>position du souhait</em> ?</strong></p>
+        <p>Une position du souhait te permet de placer chaque souhait de ta liste dans l'ordre que tu veux, pour que Père Noël et ses lutins puissent savoir ce que tu veux le plus ! <br> <strong>Note</strong> : Si tu laisses le Père Noël du glisseur à la position 0, le souhait n'aura pas de position, mais sera tout de même enregistré. </p>
+      </div>
+
+      <div>
+        <p><strong>Je n'ai pas d'idée pour mon souhait...</strong></p>
+        <p>
+          Tu peux mettre n'importe quoi ! Penses à ce que tu as toujours voulu. Qu'est-ce que c'est ? <br>
+          Voici les catégories dans lesquelles tu peux ajouter des souhaits: 
+          <% @categories.each do |category| %>
+            <% if category == "Autres" %>
+              et <%= category %>.
+            <% else %>
+              <%= category %>,
+            <% end %>
+          <% end %><br>
+          Voici quelques idées : carte-cadeau, toutou, chandail, bonbons, crayons de couleur, cahier de note, un roman particulier, un abonnement pour un service quelconque, etc.
+        </p>
+      </div>
+    <% end %>
+  </div>
+
+    <h2>Père Noël</h2>
+      <% @questions.where(category: "Père Noël").each do |question| %>
+        <%= render partial: "q_and_a", locals: { question: question } %>
+      <% end %>
+    </div>
+
+    <div class="d-flex justify-content-center" id="faq-end">
+      <p><strong>-- Fin du FAQ --</strong></p>
+    </div>
+</div>

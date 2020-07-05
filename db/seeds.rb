@@ -1,5 +1,5 @@
 puts("Cleaning database")
-Wish.destroy_all
+# Wish.destroy_all
 # Category.destroy_all
 # User.destroy_all
 
@@ -54,26 +54,52 @@ Wish.destroy_all
 # # Tommy
 # User.create!(name: "Tommy", email: "tommy@xmas.ca", birthday: Date.strptime("09/14/1996", "%m/%d/%Y"), avatar: "https://image.flaticon.com/icons/svg/2945/2945392.svg", password: "iamtommy", gender: 'M', address: '9499 rue le Grinch', delivery_method: 'Garage', politeness: 0, faith: 5)
 
-puts("Adding custom seeds for testing purposes")
+puts("Creating questions and answers")
 
-puts("Creating wishes")
-wishes = {
-  "Teddy bear" => "Jouets",
-  "Vingt Milles Lieues sous les Mers" => "Livres",
-  "iPhone 11" => "Électroniques",
-  "Sofa" => "Maison",
-  "T-shirt" => "Vêtements",
-  "Soccer ball" => "Sports",
-  "Spotify Premium" => "Musique et films",
-  "Rouge à lèvres " => "Beauté",
-  "Carte cadeau Starbucks" => "Autres"
-}
+q1 = Question.create!(question: "Qu'est-ce Santa's List ?", category: "Généralités")
+Answer.create!(answer: "Santa's List est la version numérique de la liste des récipiendaires de cadeaux de Noël pour l'année 2020. Maintenant, plus de fichier PDF ni de doigt qui fait la course sur ton écran cellulaire pour retrouver le fameux fichier PDF que Christine a envoyé il y a un mois ! Tout est centralisé ici, et est mis à jour fréquemment.", question: q1)
 
-wishes.each do |wish, category|
-  User.all.each do |user|
-    Wish.create!(name: wish, category: Category.find_by(name: category), user: user)
-  end
-end
+q2 = Question.create!(question: "À quoi sert Santa's List ?", category: "Généralités")
+Answer.create!(answer: "Santa's List a été pensé dans une perspective d'efficacité, d'économie et de sous-consommation. Le but de ce site web est de rendre la fabrication de cadeaux pour Noël plus plaisant et moins compliqué pour Père Noël.
+D'aileurs, les récipiendaires de cadeaux auront leur mot à dire sur ce site web, puisqu'ils peuvent ajouter leur propre liste de souhaits ! Donc, Père Noël pourra leur offrir ce qu'ils désirent réellement !", question: q2)
+
+q3 = Question.create!(question: "Comment puis-je avoir un compte ?", category: "Compte")
+Answer.create!(answer: "Pour l'instant, seuls les récipiendaires de cadeaux possèdent un compte. Nous travaillons présentement à implémenter l'option pour tous d'avoir un compte.", question: q3)
+
+q4 = Question.create!(question: "Je suis récipiendaire, mais je ne connais pas mes identifiants. Quoi faire ?", category: "Compte")
+Answer.create!(answer: "Contacte Stéphanie ! Elle se fera un plaisir de t'envoyer ou te renvoyer tes identifiants.", question: q4)
+
+q5 = Question.create!(question: "Que puis-je faire lorsque je suis connecté(e) ?", category: "Compte")
+Answer.create!(answer: "Si tu es récipiendaire, tu pourras te connecter et mettre à jour ta liste de souhaits pour que Père Noël puisse te donner les cadeaux que tu veux le plus !", question: q5)
+
+q6 = Question.create!(question: "Qu'est-ce qu'un souhait ?", category: "Souhaits")
+Answer.create!(answer: "Un souhait est ce qu'un enfant souhaiterait recevoir de la part de Père Noël. Chaque enfant possède un compte, et peut mettre à jour sa liste de souhaits en tout temps, et peut même positionner son souhait par rapport au cadeau qu'il désire le plus recevoir.", question: q6)
+
+q7 = Question.create!(question: "Où vit Père Noël ?", category: "Père Noël")
+Answer.create!(answer: "Père Noël vit au Pôle Nord avec Mère Noël et leurs lutins. Son adresse est Père Noël, Pôle Nord, H0H 0H0, Canada. Si tu souhaites lui écrire une lettre directement, n'hésites surtout pas ! Ses lutins se feront un plaisir de te répondre.", question: q7)
+
+# --------------------
+
+# puts("Adding custom seeds for testing purposes")
+
+# puts("Creating wishes")
+# wishes = {
+#   "Teddy bear" => "Jouets",
+#   "Vingt Milles Lieues sous les Mers" => "Livres",
+#   "iPhone 11" => "Électroniques",
+#   "Sofa" => "Maison",
+#   "T-shirt" => "Vêtements",
+#   "Soccer ball" => "Sports",
+#   "Spotify Premium" => "Musique et films",
+#   "Rouge à lèvres " => "Beauté",
+#   "Carte cadeau Starbucks" => "Autres"
+# }
+
+# wishes.each do |wish, category|
+#   User.all.each do |user|
+#     Wish.create!(name: wish, category: Category.find_by(name: category), user: user)
+#   end
+# end
 
 
 puts("Seeds done! Database is now populated.")
