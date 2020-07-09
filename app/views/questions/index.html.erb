@@ -3,6 +3,12 @@
 </div>
 
 <div class="container mt-5 whole-faq">
+  <div class="faq-navigation">
+    <%= link_to 'Généralités', '#general'%>
+    <%= link_to 'Compte', '#account'%>
+    <%= link_to 'Souhaits', '#wishes'%>
+    <%= link_to 'Père Noël', '#santa'%>
+  </div>
 
   <div class="faq-section" id="general">
     <h2>Généralités</h2>
@@ -11,7 +17,7 @@
       <% end %>
   </div>
 
-  <div class="faq-section" id="general">
+  <div class="faq-section" id="account">
     <h2>Compte</h2>
       <% @questions.where(category: "Compte").each do |question| %>
         <%= render partial: "q_and_a", locals: { question: question } %>
@@ -53,6 +59,7 @@
     <% end %>
   </div>
 
+  <div class="faq-section" id="santa">
     <h2>Père Noël</h2>
       <% @questions.where(category: "Père Noël").each do |question| %>
         <%= render partial: "q_and_a", locals: { question: question } %>
@@ -62,4 +69,5 @@
     <div class="d-flex justify-content-center" id="faq-end">
       <p><strong>-- Fin du FAQ --</strong></p>
     </div>
+  </div>
 </div>

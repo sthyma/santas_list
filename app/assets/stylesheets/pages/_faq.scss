@@ -15,3 +15,24 @@
 #faq-end {
   margin-bottom: 72px;
 }
+
+.faq-navigation {
+  a {
+    margin-right: 12px;
+    padding: 8px;
+    border-radius: 32px;
+
+    color: $light-gray;
+    background-color: $light-santa-red;
+
+    font-size: small;
+    font-weight: bold;
+
+    transition: 0.4s;
+  }
+  
+  a:hover {
+    color: $santa-red;
+    background-color: $santa-baby-blue;
+  }
+}
